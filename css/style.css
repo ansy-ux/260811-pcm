@@ -62,7 +62,7 @@ img {
   gap: 10px;
   padding: 12px 40px;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 18px;
   letter-spacing: -0.36px;
   line-height: 1.6;
@@ -104,15 +104,17 @@ img {
   left: 0;
   width: 100%;
   z-index: 30;
-  padding: 0 120px;
+  padding: 40px 120px;
   background: transparent;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.3s ease, padding 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .header.is-fixed {
   position: fixed;
-  background: var(--color-footer);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 0 120px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header__inner {
@@ -123,9 +125,31 @@ img {
   padding: 0 40px;
 }
 
-.logo img {
+.logo {
+  position: relative;
+  display: block;
   width: 176px;
   height: 18px;
+}
+
+.logo__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.logo__img--dark {
+  opacity: 0;
+}
+
+.header.is-fixed .logo__img--light {
+  opacity: 0;
+}
+
+.header.is-fixed .logo__img--dark {
+  opacity: 1;
 }
 
 .gnb {
@@ -145,16 +169,45 @@ img {
   letter-spacing: -0.4px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.7);
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
 }
 
 .gnb__item:hover {
   color: var(--color-white);
 }
 
-.gnb__item-icon {
+.header.is-fixed .gnb__item {
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.header.is-fixed .gnb__item:hover {
+  color: var(--color-text-111);
+}
+
+.gnb__item-icon-wrap {
+  position: relative;
   width: 24px;
   height: 24px;
+}
+
+.gnb__item-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.gnb__item-icon--dark {
+  opacity: 0;
+}
+
+.header.is-fixed .gnb__item-icon--light {
+  opacity: 0;
+}
+
+.header.is-fixed .gnb__item-icon--dark {
+  opacity: 1;
 }
 
 .gnb__item-wrap {
@@ -164,6 +217,10 @@ img {
 
 .gnb__item-wrap:hover .gnb__item {
   color: var(--color-white);
+}
+
+.header.is-fixed .gnb__item-wrap:hover .gnb__item {
+  color: var(--color-text-111);
 }
 
 .gnb__dropdown {
@@ -336,7 +393,7 @@ img {
   width: 1px;
   height: 0;
   background: var(--color-white);
-  animation: scrollLineGrow 1.8s ease-in-out infinite;
+  animation: scrollLineGrow 2.4s ease-in-out infinite;
 }
 
 @keyframes scrollLineGrow {
@@ -530,6 +587,7 @@ img {
   gap: 20px;
   flex: 1 0 0;
   min-width: 0;
+  padding: 20px 0;
 }
 
 .parking-notice {
@@ -679,7 +737,7 @@ img {
 
 .footer__name {
   color: var(--color-white);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: -0.32px;
   line-height: 1.6;
@@ -698,7 +756,7 @@ img {
 
 .footer__info-label {
   color: var(--color-text-777);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
   line-height: 1.6;
@@ -712,7 +770,7 @@ img {
 
 .footer__info-value {
   color: var(--color-text-aaa);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
   line-height: 1.6;
@@ -720,7 +778,7 @@ img {
 
 .footer__copyright {
   color: #555555;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
   line-height: 1.6;
