@@ -4,11 +4,301 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PCM</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="image/main-visual-1.jpg" alt="" class="hero__bg-img is-active">
+        <img src="image/main-visual-2.jpg" alt="" class="hero__bg-img">
+        <img src="image/main-visual-3.jpg" alt="" class="hero__bg-img">
+      </div>
+
+      <header class="header">
+        <div class="header__inner">
+          <a href="#" class="logo">
+            <img src="image/logo-pcm-white.svg" alt="PCM">
+          </a>
+          <nav class="gnb">
+            <a href="#" class="gnb__item">회사소개</a>
+            <div class="gnb__item-wrap">
+              <a href="#" class="gnb__item gnb__item--sub">
+                서비스소개
+                <img src="image/ic-down-white.svg" alt="" class="gnb__item-icon">
+              </a>
+              <div class="gnb__dropdown">
+                <a href="#" class="gnb__dropdown-item">프리미엄 호텔 통합 상품권</a>
+                <a href="#" class="gnb__dropdown-item">다이닝 바우처</a>
+                <a href="#" class="gnb__dropdown-item">스파상품권</a>
+                <a href="#" class="gnb__dropdown-item" aria-current="page">주차상품권</a>
+              </div>
+            </div>
+            <a href="#" class="gnb__item">고객센터</a>
+          </nav>
+        </div>
+      </header>
+
+      <div class="hero__content">
+        <div class="hero__text-group">
+          <h1 class="hero__title">
+            <span>놓치기 아까운 카드사 주차 혜택,</span>
+            <span>프리미아 예약으로 완벽하게</span>
+          </h1>
+          <p class="hero__desc">프리미엄 주차 쿠폰, 예약부터 출차까지 막힘없이</p>
+        </div>
+        <a href="#" class="btn btn--gold">주차장 보기</a>
+      </div>
+
+      <div class="hero__scroll">
+        <p class="hero__scroll-text">Scroll</p>
+        <div class="hero__scroll-line">
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주차 서비스 이용 안내 -->
+    <section class="section">
+      <div class="section__inner">
+        <h2 class="section__title" data-aos="fade-up">주차 서비스 이용 안내</h2>
+
+        <ol class="guide-list">
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-1.png" alt="STEP 01 안내 및 유의사항 확인 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 01</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  휴대폰으로 전송된 MMS에서<br>
+                  안내 및 유의사항을 확인합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-2.png" alt="STEP 02 앱 다운로드 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 02</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <div class="guide-item__text-group">
+                  <p class="guide-item__heading">URL을 클릭하여 앱을 설치합니다.</p>
+                  <p class="guide-item__desc">하단 다운로드 버튼을 통해 미리 설치하실 수 있어요.</p>
+                </div>
+                <div class="guide-item__download">
+                  <div class="qr-box">
+                    <img src="image/img-qr.png" alt="앱 다운로드 QR코드">
+                  </div>
+                  <a href="#" class="btn btn--gold">
+                    앱 다운로드
+                    <img src="image/ic-download-white.svg" alt="" class="btn__icon">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-3.png" alt="STEP 03 주차 메뉴 선택 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 03</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  프리미아 앱에서<br>
+                  '주차' 메뉴를 선택합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-4.png" alt="STEP 04 이용가능 주차장 선택 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 04</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  주차 지도에서<br>
+                  '이용가능 주차장'을 선택합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-5.png" alt="STEP 05 쿠폰 선택 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 05</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  전달 받은 쿠폰을 선택하고<br>
+                  '선택 완료' 버튼을 클릭합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-6.png" alt="STEP 06 예약하기 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 06</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  이용할 주차장을 선택하여<br>
+                  상세 정보를 확인 후<br>
+                  '예약하기' 버튼을 클릭합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image" data-aos="fade-up">
+              <img src="image/guide-img-7.png" alt="STEP 07 주차 예약 화면">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 07</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <p class="guide-item__heading">
+                  차량번호와 예약일을 선택하고<br>
+                  '주차 예약' 버튼을 클릭합니다.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="guide-item">
+            <div class="guide-item__image guide-item__image--photo" data-aos="fade-up">
+              <img src="image/guide-img-8.png" alt="STEP 08 주차장 이용">
+            </div>
+            <div class="guide-item__body">
+              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 08</span>
+              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
+                <div class="guide-item__text-group">
+                  <p class="guide-item__heading">
+                    예약한 주차장 방문하여<br>
+                    주차 서비스를 이용합니다.
+                  </p>
+                  <p class="guide-item__desc">
+                    쿠폰 금액 내에서 자동 결제되며,<br>
+                    쿠폰 금액을 초과한 경우 추가 결제가 필요합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 주차장 안내 -->
+    <section class="section section--parking">
+      <div class="section__inner">
+        <h2 class="section__title" data-aos="fade-up">주차장 안내</h2>
+
+        <div class="parking-info">
+          <div class="parking-info__map" data-aos="fade-up">
+            <img src="image/img-parking-map.png" alt="주차장 이용 가능 지역 지도">
+          </div>
+          <div class="parking-info__content">
+            <p class="parking-notice" data-aos="fade-up">
+              주차장은 약 400개 정도 이용 가능하며,<br>
+              2026년 10월에 1,500여개로 확대될 예정입니다.
+            </p>
+
+            <dl class="parking-detail-list">
+              <div class="parking-detail" data-aos="fade-up">
+                <dt class="parking-detail__title">주차장 이용 시간</dt>
+                <dd class="parking-detail__bullets">
+                  <ul>
+                    <li>주차장별로 이용시간이 다릅니다. 앱에서 주차장별 이용시간을 확인해주세요.</li>
+                  </ul>
+                </dd>
+              </div>
+
+              <div class="parking-detail" data-aos="fade-up">
+                <dt class="parking-detail__title">주차 요금</dt>
+                <dd class="parking-detail__bullets">
+                  <ul>
+                    <li>주차 요금은 주차장 별로 상이합니다.</li>
+                    <li>카드사에서 제공하는 주차쿠폰의 금액만큼 이용이 가능합니다.</li>
+                    <li>쿠폰 이용 금액을 초과할 경우 출차 시 추가 결제가 필요합니다.</li>
+                  </ul>
+                </dd>
+              </div>
+
+              <div class="parking-detail" data-aos="fade-up">
+                <dt class="parking-detail__title">고객센터</dt>
+                <dd class="parking-detail__contact">
+                  <p class="parking-detail__phone">02-3276-3913</p>
+                  <div class="parking-detail__row">
+                    <span class="parking-detail__label">상담시간</span>
+                    <span class="parking-detail__value">평일 09:00 ~ 18:00</span>
+                  </div>
+                  <p class="parking-detail__note">주말 및 공휴일 불가 / 점심시간 12:00 ~ 13:00</p>
+                </dd>
+              </div>
+
+              <div class="parking-detail" data-aos="fade-up">
+                <dt class="parking-detail__title">제휴 및 구매문의</dt>
+                <dd class="parking-detail__contact">
+                  <div class="parking-detail__row">
+                    <span class="parking-detail__label">전화번호</span>
+                    <span class="parking-detail__value">070-8832-6307</span>
+                  </div>
+                  <div class="parking-detail__row">
+                    <span class="parking-detail__label">이메일</span>
+                    <span class="parking-detail__value">pcmkorea01@naver.com</span>
+                  </div>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <img src="image/logo-pcm-white.svg" alt="PCM" class="footer__logo">
+        <div class="footer__company">
+          <p class="footer__name">한국프리미엄카드마케팅㈜</p>
+          <div class="footer__info">
+            <div class="footer__info-item">
+              <span class="footer__info-label">주소</span>
+              <span class="footer__info-divider"></span>
+              <span class="footer__info-value">서울 중구 정동길 14 오송빌딩 3층</span>
+            </div>
+            <div class="footer__info-item">
+              <span class="footer__info-label">전화번호</span>
+              <span class="footer__info-divider"></span>
+              <span class="footer__info-value">02-3276-3913</span>
+            </div>
+          </div>
+        </div>
+        <p class="footer__copyright">COPYRIGHT BY PCM KOREA  ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+
   </main>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
