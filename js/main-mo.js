@@ -85,4 +85,59 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     { passive: false }
   );
+
+  // Touch (mobile) support — wheel events never fire on touch devices, so
+  // swipes need their own handling mirroring the wheel logic above.
+  const SWIPE_THRESHOLD = 40;
+  let touchStartY = null;
+  let touchLastY = null;
+
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      touchStartY = e.touches[0].clientY;
+      touchLastY = touchStartY;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    "touchmove",
+    (e) => {
+      if (touchStartY === null) return;
+      touchLastY = e.touches[0].clientY;
+
+      // On the free-scroll slide, let native touch scrolling happen unless
+      // already at its top and the user is dragging further down.
+      if (index === lastIndex && freeScroll) {
+        if (touchLastY > touchStartY && freeScroll.scrollTop <= 0) {
+          e.preventDefault();
+        }
+        return;
+      }
+
+      e.preventDefault();
+    },
+    { passive: false }
+  );
+
+  window.addEventListener("touchend", () => {
+    if (touchStartY === null || touchLastY === null) return;
+    const deltaY = touchStartY - touchLastY; // positive = swiped up = advance
+    touchStartY = null;
+    touchLastY = null;
+
+    if (animating || Math.abs(deltaY) < SWIPE_THRESHOLD) return;
+
+    const goingDown = deltaY > 0;
+
+    if (index === lastIndex && freeScroll) {
+      if (!goingDown && freeScroll.scrollTop <= 0) {
+        goTo(index - 1);
+      }
+      return;
+    }
+
+    goTo(index + (goingDown ? 1 : -1));
+  });
 });
