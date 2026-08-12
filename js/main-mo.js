@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const header = document.querySelector(".mo-header");
   const btnTop = document.querySelector(".mo-btn-top");
+  const viewport = document.querySelector(".mo-viewport");
   const track = document.querySelector(".mo-track");
-  if (!track) return;
+  if (!track || !viewport) return;
 
   const slides = Array.from(track.children);
   const lastIndex = slides.length - 1;
@@ -36,8 +37,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let index = 0;
   let animating = false;
 
+  // Use the viewport's actual measured pixel height rather than the "vh"
+  // CSS unit: on mobile, "vh" includes the area behind the browser's
+  // collapsible address bar while the slides themselves are sized with
+  // "100svh" (the smaller, always-visible height). Translating by "vh"
+  // while slides are "svh"-tall causes the track to overshoot a little
+  // more each slide, ending up misaligned/cut off further down the list.
   const render = () => {
-    track.style.transform = `translateY(-${index * 100}vh)`;
+    const slideHeight = viewport.clientHeight;
+    track.style.transform = `translateY(-${index * slideHeight}px)`;
     if (header) header.classList.toggle("is-fixed", index > 0);
     if (btnTop) btnTop.classList.toggle("is-visible", index > 0);
   };
@@ -54,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   render();
+  window.addEventListener("resize", render);
 
   if (btnTop) {
     btnTop.addEventListener("click", () => goTo(0));
