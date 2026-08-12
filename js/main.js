@@ -20,6 +20,36 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", toggleFixed);
   }
 
+  const btnTop = document.querySelector(".btn-top");
+  const heroSection = document.querySelector(".hero");
+  const footerSection = document.querySelector(".footer");
+  if (btnTop && heroSection && footerSection) {
+    const STOP_GAP = 50; // footer 위 50px 지점에서 정지
+
+    const updateBtnTop = () => {
+      const scrollY = window.scrollY;
+
+      btnTop.classList.toggle("is-visible", scrollY >= heroSection.offsetHeight);
+
+      const stopScrollY = footerSection.offsetTop - window.innerHeight;
+      if (scrollY >= stopScrollY) {
+        btnTop.style.top = `${footerSection.offsetTop - STOP_GAP - btnTop.offsetHeight}px`;
+        btnTop.classList.add("is-stuck");
+      } else {
+        btnTop.style.top = "";
+        btnTop.classList.remove("is-stuck");
+      }
+    };
+
+    updateBtnTop();
+    window.addEventListener("scroll", updateBtnTop);
+    window.addEventListener("resize", updateBtnTop);
+
+    btnTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   if (window.AOS) {
     AOS.init({
       duration: 600,
