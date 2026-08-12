@@ -217,7 +217,7 @@
         <h2 class="section__title" data-aos="fade-up">주차장 안내</h2>
 
         <div class="parking-info">
-          <div class="parking-info__map" data-aos="fade-up">
+          <div class="parking-info__map" data-aos="fade-up" id="parkingMapTrigger" role="button" tabindex="0">
             <img src="image/img-parking-map.png" alt="주차장 이용 가능 지역 지도">
           </div>
           <div class="parking-info__content">
@@ -304,6 +304,126 @@
     <button type="button" class="btn-top" aria-label="맨 위로 이동">
       <img src="image/ic-top-black.svg" alt="" class="btn-top__icon">
     </button>
+
+    <div class="parking-popup" id="parkingPopup">
+      <div class="parking-popup__dim" id="parkingPopupDim"></div>
+      <div class="parking-popup__panel">
+        <div class="parking-popup__header">
+          <button type="button" class="parking-popup__close" aria-label="닫기" id="parkingPopupClose">
+            <img src="image/ic-close-black.svg" alt="">
+          </button>
+        </div>
+
+        <div class="parking-popup__body">
+          <div class="parking-popup__info">
+            <div class="parking-popup__slide">
+              <div class="parking-popup__slide-img">
+                <img src="image/parking-popup-main.png" alt="GS타임즈 정동 민영 주차장">
+              </div>
+              <div class="parking-popup__thumbs">
+                <div class="parking-popup__thumb parking-popup__thumb--active">
+                  <img src="image/parking-popup-main.png" alt="">
+                </div>
+                <div class="parking-popup__thumb">
+                  <img src="image/parking-popup-thumb-2.png" alt="">
+                </div>
+                <div class="parking-popup__thumb">
+                  <img src="image/parking-popup-thumb-3.png" alt="">
+                </div>
+                <div class="parking-popup__thumb">
+                  <img src="image/parking-popup-thumb-4.png" alt="">
+                </div>
+                <div class="parking-popup__thumb">
+                  <img src="image/parking-popup-thumb-5.png" alt="">
+                </div>
+                <div class="parking-popup__thumb">
+                  <img src="image/parking-popup-thumb-2.png" alt="">
+                </div>
+              </div>
+            </div>
+
+            <div class="parking-popup__detail">
+              <h3 class="parking-popup__title">GS타임즈 정동 민영 주차장</h3>
+
+              <ul class="parking-popup__meta">
+                <li class="parking-popup__meta-item">
+                  <span class="ic ic-14">
+                    <img src="image/ic-location-14-base.svg" alt="" style="inset:0">
+                    <img src="image/ic-location-14-sub.svg" alt="" style="left:9.38%; right:9.38%; top:0.44px; height:13.125px;">
+                  </span>
+                  <span>서울 중구 정동길 16 GS타임즈 정동 민영 주차장</span>
+                </li>
+                <li class="parking-popup__meta-item">
+                  <span class="ic ic-14">
+                    <span class="ic-14__frame"><img src="image/ic-time-14-arrow.svg" alt=""></span>
+                    <img src="image/ic-time-14-hands.svg" alt="" style="inset:7.14%">
+                  </span>
+                  <span>1600-1234</span>
+                </li>
+                <li class="parking-popup__meta-item">
+                  <span class="ic ic-14">
+                    <span class="ic-14__frame"><img src="image/ic-time-14-arrow.svg" alt=""></span>
+                    <img src="image/ic-parking-14.svg" alt="" style="inset:3.57%">
+                  </span>
+                  <span>총 407면</span>
+                </li>
+                <li class="parking-popup__meta-item">
+                  <span class="ic ic-14">
+                    <span class="ic-14__frame"><img src="image/ic-time-14-arrow.svg" alt=""></span>
+                    <img src="image/ic-time-14-hands.svg" alt="" style="inset:7.14%">
+                  </span>
+                  <span>평일 10:00~22:00<br>주말 : 10:00~16:00</span>
+                </li>
+              </ul>
+
+              <div class="parking-popup__actions">
+                <a href="#" class="parking-popup__action">
+                  <img src="image/ic-share-16.svg" alt="">
+                  공유
+                </a>
+                <a href="#" class="parking-popup__action">
+                  <img src="image/ic-direction-16.svg" alt="">
+                  길찾기
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="parking-popup__divider"></div>
+
+          <div class="parking-popup__types">
+            <h4 class="parking-popup__types-title">주차장 유형</h4>
+            <div class="parking-popup__types-grid">
+              <div class="parking-popup__type">
+                <span class="ic ic-36">
+                  <img src="image/ic-type-ground-1.svg" alt="" style="inset:62.5% 69.44% 20.83% 19.44%">
+                  <img src="image/ic-type-ground-1.svg" alt="" style="inset:62.5% 19.44% 20.83% 69.44%">
+                  <img src="image/ic-type-ground-2.svg" alt="" style="inset:20.83% 13.92% 31.94% 13.86%">
+                  <img src="image/ic-type-ground-3.svg" alt="" style="inset:48.61% 63.89% 43.06% 27.78%">
+                  <img src="image/ic-type-ground-3.svg" alt="" style="inset:48.61% 27.78% 43.06% 63.89%">
+                  <img src="image/ic-type-ground-4.svg" alt="" style="inset:83.33% 5.56% 11.11% 5.56%">
+                </span>
+                <span class="parking-popup__type-label">지상</span>
+              </div>
+              <div class="parking-popup__type">
+                <span class="ic ic-36">
+                  <img src="image/ic-type-self-1.svg" alt="" style="inset:47.03% 64.35% 25.47% 8.15%; transform:rotate(-45deg);">
+                  <img src="image/ic-type-self-2.svg" alt="" style="inset:38.89% 64.15% 11.14% 3.99%">
+                  <img src="image/ic-type-self-3.svg" alt="" style="inset:38.89% 3.99% 11.14% 64.15%">
+                  <img src="image/ic-type-self-4.svg" alt="" style="inset:8.33% 16.72% 25.03% 16.67%">
+                  <img src="image/ic-type-self-5.svg" alt="" style="inset:49.32% 10.43% 30.56% 68.31%">
+                  <img src="image/ic-type-self-6.svg" alt="" style="inset:59.72% 15.28% 20.83% 65.28%">
+                  <img src="image/ic-type-self-7.svg" alt="" style="inset:49.32% 68.31% 30.56% 10.43%">
+                  <img src="image/ic-type-self-6.svg" alt="" style="inset:59.72% 65.28% 20.83% 15.28%">
+                  <img src="image/ic-type-self-8.svg" alt="" style="inset:36.11% 43.06% 50% 43.06%">
+                </span>
+                <span class="parking-popup__type-label">자주식</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

@@ -50,6 +50,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const parkingMapTrigger = document.getElementById("parkingMapTrigger");
+  const parkingPopup = document.getElementById("parkingPopup");
+  const parkingPopupDim = document.getElementById("parkingPopupDim");
+  const parkingPopupClose = document.getElementById("parkingPopupClose");
+  if (parkingMapTrigger && parkingPopup && parkingPopupDim && parkingPopupClose) {
+    const openPopup = () => {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
+      parkingPopup.classList.add("is-open");
+    };
+
+    const closePopup = () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      parkingPopup.classList.remove("is-open");
+    };
+
+    parkingMapTrigger.addEventListener("click", openPopup);
+    parkingMapTrigger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openPopup();
+      }
+    });
+    parkingPopupDim.addEventListener("click", closePopup);
+    parkingPopupClose.addEventListener("click", closePopup);
+  }
+
   if (window.AOS) {
     AOS.init({
       duration: 600,

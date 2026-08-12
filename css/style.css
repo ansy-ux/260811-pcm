@@ -572,6 +572,7 @@ img {
   border: 1px solid var(--color-border);
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .parking-info__map img {
@@ -897,5 +898,270 @@ img {
   .btn-top {
     right: 24px;
     bottom: 24px;
+  }
+}
+
+/* Parking popup */
+.parking-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.parking-popup.is-open {
+  display: flex;
+}
+
+.parking-popup__dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+
+.parking-popup__panel {
+  position: relative;
+  width: 450px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: var(--color-white);
+  border-radius: 20px;
+}
+
+.parking-popup__header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 64px;
+  padding: 0 20px;
+  background: var(--color-white);
+  z-index: 1;
+}
+
+.parking-popup__close {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.parking-popup__close img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.parking-popup__body {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.parking-popup__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.parking-popup__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.parking-popup__slide-img {
+  width: 100%;
+  aspect-ratio: 345 / 211;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.parking-popup__slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parking-popup__thumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.parking-popup__thumb {
+  flex-shrink: 0;
+  width: 68px;
+  height: 42px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.parking-popup__thumb--active {
+  border: 1px solid var(--color-text-111);
+}
+
+.parking-popup__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parking-popup__title {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: 1.5;
+  color: var(--color-text-111);
+}
+
+.parking-popup__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.parking-popup__meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  line-height: 1.5;
+  color: var(--color-text-666);
+}
+
+.parking-popup__meta-item .ic {
+  margin-top: 3px;
+}
+
+.parking-popup__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.parking-popup__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #dfdfdf;
+  border-radius: 1000px;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -0.24px;
+  color: var(--color-text-666);
+  white-space: nowrap;
+}
+
+.parking-popup__action img {
+  width: 16px;
+  height: 16px;
+}
+
+.parking-popup__divider {
+  height: 10px;
+  background: #f4f4f4;
+}
+
+.parking-popup__types {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.parking-popup__types-title {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.36px;
+  line-height: 1.5;
+  color: var(--color-text-111);
+}
+
+.parking-popup__types-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.parking-popup__type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 70px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+.parking-popup__type-label {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.26px;
+  line-height: 1.5;
+  color: var(--color-text-666);
+  text-align: center;
+}
+
+/* Composite icons assembled from exported vector fragments */
+.ic {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.ic > img,
+.ic > span {
+  position: absolute;
+  display: block;
+}
+
+.ic-14 {
+  width: 14px;
+  height: 14px;
+}
+
+.ic-14__frame {
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ic-14__frame img {
+  position: static;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ic-36 {
+  width: 36px;
+  height: 36px;
+}
+
+@media (max-width: 767px) {
+  .parking-popup__panel {
+    width: 100%;
+    max-width: calc(100vw - 24px);
   }
 }
