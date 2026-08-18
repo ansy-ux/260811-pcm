@@ -1,13 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".hero__bg-img");
+  const textSlides = document.querySelectorAll(".hero__text-group");
   if (slides.length >= 2) {
     let current = 0;
     const interval = 6000; // matches heroZoomOut animation duration in style.css
 
     setInterval(() => {
       slides[current].classList.remove("is-active");
+      textSlides[current] && textSlides[current].classList.remove("is-active");
       current = (current + 1) % slides.length;
       slides[current].classList.add("is-active");
+      textSlides[current] && textSlides[current].classList.add("is-active");
     }, interval);
   }
 
@@ -49,6 +52,49 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  document.querySelectorAll("[data-guide-slider]").forEach((slider) => {
+    const imageFrames = slider.querySelectorAll(".guide-slide-image__frame");
+    const textPanels = slider.querySelectorAll(".guide-slide-text__panel");
+    const currentEl = slider.querySelector("[data-guide-slide-current]");
+    const total = imageFrames.length;
+    if (total < 2) return;
+
+    const AUTO_INTERVAL = 4000;
+    let current = 0;
+    let timer = null;
+
+    const render = () => {
+      imageFrames.forEach((frame, i) => frame.classList.toggle("is-active", i === current));
+      textPanels.forEach((panel, i) => panel.classList.toggle("is-active", i === current));
+      if (currentEl) currentEl.textContent = current + 1;
+    };
+
+    const goTo = (index) => {
+      current = (index + total) % total;
+      render();
+    };
+
+    const startAuto = () => {
+      timer = setInterval(() => goTo(current + 1), AUTO_INTERVAL);
+    };
+
+    const restartAuto = () => {
+      clearInterval(timer);
+      startAuto();
+    };
+
+    slider.querySelector("[data-guide-slide-prev]")?.addEventListener("click", () => {
+      goTo(current - 1);
+      restartAuto();
+    });
+    slider.querySelector("[data-guide-slide-next]")?.addEventListener("click", () => {
+      goTo(current + 1);
+      restartAuto();
+    });
+
+    startAuto();
+  });
 
   const parkingMapTrigger = document.getElementById("parkingMapTrigger");
   const parkingPopup = document.getElementById("parkingPopup");

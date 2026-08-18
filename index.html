@@ -14,9 +14,14 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero__bg">
-        <img src="image/main-visual-1.jpg" alt="" class="hero__bg-img is-active">
-        <img src="image/main-visual-2.jpg" alt="" class="hero__bg-img">
-        <img src="image/main-visual-3.jpg" alt="" class="hero__bg-img">
+        <picture>
+          <source media="(max-width: 767px)" srcset="image/main-visual-1-mo.jpg">
+          <img src="image/main-visual-1.jpg" alt="" class="hero__bg-img is-active">
+        </picture>
+        <picture>
+          <source media="(max-width: 767px)" srcset="image/main-visual-2-mo.jpg">
+          <img src="image/main-visual-2.jpg" alt="" class="hero__bg-img">
+        </picture>
       </div>
 
       <header class="header">
@@ -48,12 +53,21 @@
       </header>
 
       <div class="hero__content">
-        <div class="hero__text-group">
-          <h1 class="hero__title">
-            <span>놓치기 아까운 카드사 주차 혜택,</span>
-            <span>프리미아 예약으로 완벽하게</span>
-          </h1>
-          <p class="hero__desc">프리미엄 주차 쿠폰, 예약부터 출차까지 막힘없이</p>
+        <div class="hero__text-stack">
+          <div class="hero__text-group is-active">
+            <h1 class="hero__title">
+              <span>놓치기 아까운 카드사 주차 혜택,</span>
+              <span>프리미아 예약으로 완벽하게</span>
+            </h1>
+            <p class="hero__desc">프리미엄 주차 쿠폰, 예약부터 출차까지 막힘없이</p>
+          </div>
+          <div class="hero__text-group">
+            <h1 class="hero__title">
+              <span>전국 400여 개 주차장 예약도</span>
+              <span>프리미아 하나로!</span>
+            </h1>
+            <p class="hero__desc">어디를 가든 스마트하게 쿠폰 예약!</p>
+          </div>
         </div>
         <a href="#parking-info" class="btn btn--gold">주차장 보기</a>
       </div>
@@ -69,145 +83,160 @@
     <!-- 주차 서비스 이용 안내 -->
     <section class="section">
       <div class="section__inner">
-        <h2 class="section__title" data-aos="fade-up">주차 서비스 이용 안내</h2>
 
-        <ol class="guide-list">
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-1.png" alt="STEP 01 안내 및 유의사항 확인 화면">
+        <!-- 01. 프리미아 앱 다운로드 (슬라이드 없음) -->
+        <div class="guide-block" data-aos="fade-up">
+          <div class="guide-block__head">
+            <span class="guide-block__num">01</span>
+            <h3 class="guide-block__title">프리미아 앱 다운로드</h3>
+          </div>
+          <div class="guide-block__row">
+            <div class="guide-block__image">
+              <img src="image/guide-img-1.png" alt="프리미아 앱 다운로드 화면">
             </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 01</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  휴대폰으로 전송된 MMS에서<br>
-                  안내 및 유의사항을 확인합니다.
+            <div class="guide-block__content">
+              <div class="guide-block__text-group">
+                <p class="guide-block__heading">
+                  구글 플레이 스토어, 애플 앱스토어에서<br>
+                  '프리미아'를 검색하여 앱을 설치해주세요.
                 </p>
+                <p class="guide-block__desc">하단 QR코드나 다운로드 버튼을 통해서 설치하실 수도 있어요.</p>
+              </div>
+              <div class="guide-block__download">
+                <div class="qr-box">
+                  <img src="image/qr.png" alt="앱 다운로드 QR코드">
+                </div>
+                <a href="#" class="btn btn--gold">
+                  앱 다운로드
+                  <img src="image/ic-download-white.svg" alt="" class="btn__icon">
+                </a>
               </div>
             </div>
-          </li>
+          </div>
+        </div>
 
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-2.png" alt="STEP 02 앱 다운로드 화면">
+        <!-- 02. 주차 쿠폰 등록 방법 (자동 슬라이드, 4단계) -->
+        <div class="guide-block guide-block--slide" data-guide-slider data-aos="fade-up">
+          <div class="guide-block__head">
+            <span class="guide-block__num">02</span>
+            <h3 class="guide-block__title">주차 쿠폰 등록 방법</h3>
+          </div>
+          <div class="guide-block__row">
+            <div class="guide-block__image">
+              <div class="guide-slide-image">
+                <img src="image/guide-img-2-1.png" alt="STEP 01" class="guide-slide-image__frame is-active">
+                <img src="image/guide-img-2-2.png" alt="STEP 02" class="guide-slide-image__frame">
+                <img src="image/guide-img-2-3.png" alt="STEP 03" class="guide-slide-image__frame">
+                <img src="image/guide-img-2-4.png" alt="STEP 04" class="guide-slide-image__frame">
+              </div>
             </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 02</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <div class="guide-item__text-group">
-                  <p class="guide-item__heading">URL을 클릭하여 앱을 설치합니다.</p>
-                  <p class="guide-item__desc">하단 다운로드 버튼을 통해 미리 설치하실 수 있어요.</p>
+            <div class="guide-block__content">
+              <div class="guide-slide-text">
+                <div class="guide-slide-text__panel is-active">
+                  <span class="step-badge">STEP 01</span>
+                  <p class="guide-block__heading">
+                    프리미아 앱을 실행하여<br>
+                    로그인을 진행해주세요.
+                  </p>
                 </div>
-                <div class="guide-item__download">
-                  <div class="qr-box">
-                    <img src="image/img-qr.png" alt="앱 다운로드 QR코드">
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 02</span>
+                  <p class="guide-block__heading">하단 쿠폰 등록 메뉴를 클릭해주세요.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 03</span>
+                  <p class="guide-block__heading">쿠폰 등록 메뉴에서 '내 휴대폰으로 받은 쿠폰 불러오기'를 클릭하여 내 휴대폰 번호로 받은 모든 쿠폰을 등록해주세요.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 04</span>
+                  <p class="guide-block__heading">MMS로 전달 받으신 쿠폰번호를 직접 등록하실 수도 있습니다.</p>
+                </div>
+              </div>
+              <div class="slide-page" data-guide-slide-nav>
+                <button type="button" class="slide-btn" data-guide-slide-prev aria-label="이전 단계">
+                  <img src="image/ic-left-black.svg" alt="">
+                </button>
+                <span class="slide-page__count">
+                  <em class="slide-page__current" data-guide-slide-current>1</em><span class="slide-page__sep">/</span><span class="slide-page__total" data-guide-slide-total>4</span>
+                </span>
+                <button type="button" class="slide-btn" data-guide-slide-next aria-label="다음 단계">
+                  <img src="image/ic-right-black.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03. 주차 예약 이용 방법 (자동 슬라이드, 7단계) -->
+        <div class="guide-block guide-block--slide" data-guide-slider data-aos="fade-up">
+          <div class="guide-block__head">
+            <span class="guide-block__num">03</span>
+            <h3 class="guide-block__title">주차 예약 이용 방법</h3>
+          </div>
+          <div class="guide-block__row">
+            <div class="guide-block__image">
+              <div class="guide-slide-image">
+                <img src="image/guide-img-3-1.png" alt="STEP 01" class="guide-slide-image__frame is-active">
+                <img src="image/guide-img-3-2.png" alt="STEP 02" class="guide-slide-image__frame">
+                <img src="image/guide-img-3-3.png" alt="STEP 03" class="guide-slide-image__frame">
+                <img src="image/guide-img-3-4.png" alt="STEP 04" class="guide-slide-image__frame">
+                <img src="image/guide-img-3-5.png" alt="STEP 05" class="guide-slide-image__frame">
+                <img src="image/guide-img-3-6.png" alt="STEP 06" class="guide-slide-image__frame">
+              </div>
+              <img src="image/guide-img-3-7.png" alt="STEP 07" class="guide-slide-image__frame guide-slide-image__frame--cover">
+            </div>
+            <div class="guide-block__content">
+              <div class="guide-slide-text">
+                <div class="guide-slide-text__panel is-active">
+                  <span class="step-badge">STEP 01</span>
+                  <p class="guide-block__heading">
+                    프리미아 앱 홈 영역에서<br>
+                    '주차' 메뉴를 클릭해주세요.
+                  </p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 02</span>
+                  <p class="guide-block__heading">주차 지도에서 '이용가능 주차장'을 선택합니다.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 03</span>
+                  <p class="guide-block__heading">등록한 쿠폰을 선택하고 '선택완료' 버튼을 클릭합니다.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 04</span>
+                  <p class="guide-block__heading">이용할 주차장을 선택하여 상세보기를 클릭해주세요.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 05</span>
+                  <p class="guide-block__heading">주차장의 상세 정보를 확인하고 '예약하기' 버튼을 클릭해주세요.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 06</span>
+                  <p class="guide-block__heading">주차장을 이용할 차량번호, 예약일을 입력 후 '주차 예약' 버튼을 클릭하여 예약을 완료합니다.</p>
+                </div>
+                <div class="guide-slide-text__panel">
+                  <span class="step-badge">STEP 07</span>
+                  <div class="guide-block__text-group">
+                    <p class="guide-block__heading">예약한 주차장 방문하여 주차 서비스를 이용합니다.</p>
+                    <p class="guide-block__desc">쿠폰 금액 내에서 자동 결제되며, 쿠폰 금액을 초과한 경우 추가 결제가 필요합니다.</p>
                   </div>
-                  <a href="#" class="btn btn--gold">
-                    앱 다운로드
-                    <img src="image/ic-download-white.svg" alt="" class="btn__icon">
-                  </a>
                 </div>
               </div>
-            </div>
-          </li>
-
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-3.png" alt="STEP 03 주차 메뉴 선택 화면">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 03</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  프리미아 앱에서<br>
-                  '주차' 메뉴를 선택합니다.
-                </p>
+              <div class="slide-page" data-guide-slide-nav>
+                <button type="button" class="slide-btn" data-guide-slide-prev aria-label="이전 단계">
+                  <img src="image/ic-left-black.svg" alt="">
+                </button>
+                <span class="slide-page__count">
+                  <em class="slide-page__current" data-guide-slide-current>1</em><span class="slide-page__sep">/</span><span class="slide-page__total" data-guide-slide-total>7</span>
+                </span>
+                <button type="button" class="slide-btn" data-guide-slide-next aria-label="다음 단계">
+                  <img src="image/ic-right-black.svg" alt="">
+                </button>
               </div>
             </div>
-          </li>
+          </div>
+        </div>
 
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-4.png" alt="STEP 04 이용가능 주차장 선택 화면">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 04</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  주차 지도에서<br>
-                  '이용가능 주차장'을 선택합니다.
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-5.png" alt="STEP 05 쿠폰 선택 화면">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 05</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  전달 받은 쿠폰을 선택하고<br>
-                  '선택 완료' 버튼을 클릭합니다.
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-6.png" alt="STEP 06 예약하기 화면">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 06</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  이용할 주차장을 선택하여<br>
-                  상세 정보를 확인 후<br>
-                  '예약하기' 버튼을 클릭합니다.
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="guide-item">
-            <div class="guide-item__image" data-aos="fade-up">
-              <img src="image/guide-img-7.png" alt="STEP 07 주차 예약 화면">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 07</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <p class="guide-item__heading">
-                  차량번호와 예약일을 선택하고<br>
-                  '주차 예약' 버튼을 클릭합니다.
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="guide-item">
-            <div class="guide-item__image guide-item__image--photo" data-aos="fade-up">
-              <img src="image/guide-img-8.png" alt="STEP 08 주차장 이용">
-            </div>
-            <div class="guide-item__body">
-              <span class="step-badge" data-aos="fade-up" data-aos-delay="100">STEP 08</span>
-              <div class="guide-item__rest" data-aos="fade-up" data-aos-delay="200">
-                <div class="guide-item__text-group">
-                  <p class="guide-item__heading">
-                    예약한 주차장 방문하여<br>
-                    주차 서비스를 이용합니다.
-                  </p>
-                  <p class="guide-item__desc">
-                    쿠폰 금액 내에서 자동 결제되며,<br>
-                    쿠폰 금액을 초과한 경우 추가 결제가 필요합니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ol>
       </div>
     </section>
 
