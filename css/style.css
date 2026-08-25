@@ -781,6 +781,15 @@ img {
   background: #ddd;
 }
 
+.parking-detail__bullets li p {
+  margin: 0;
+}
+
+.parking-detail__bullets li .parking-detail__sub-note {
+  margin-top: 4px;
+  color: var(--color-text-999);
+}
+
 .parking-detail__contact {
   width: 100%;
 }
