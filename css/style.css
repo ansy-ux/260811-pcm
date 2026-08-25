@@ -14,6 +14,7 @@
   --color-text-777: #777777;
   --color-text-999: #999999;
   --color-text-aaa: #aaaaaa;
+  --color-text-ccc: #cccccc;
   --color-border: #eaeaea;
   --color-bg-gray: #f3f4f7;
   --color-bg-beige: #f7f5f0;
@@ -862,6 +863,25 @@ img {
   height: 18px;
 }
 
+.footer__links {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.footer__links-item {
+  color: var(--color-text-ccc);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.footer__links-item--bold {
+  color: var(--color-white);
+  font-weight: 700;
+}
+
 .footer__company {
   display: flex;
   flex-direction: column;
@@ -870,7 +890,7 @@ img {
 
 .footer__name {
   color: var(--color-white);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   letter-spacing: -0.32px;
   line-height: 1.6;
@@ -888,11 +908,12 @@ img {
 }
 
 .footer__info-label {
-  color: var(--color-text-777);
+  color: var(--color-text-999);
   font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
   line-height: 1.6;
+  white-space: nowrap;
 }
 
 .footer__info-divider {
@@ -902,15 +923,16 @@ img {
 }
 
 .footer__info-value {
-  color: var(--color-text-aaa);
+  color: var(--color-text-ccc);
   font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
   line-height: 1.6;
+  white-space: nowrap;
 }
 
 .footer__copyright {
-  color: #555555;
+  color: var(--color-text-777);
   font-weight: 400;
   font-size: 14px;
   letter-spacing: -0.28px;
